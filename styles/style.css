@@ -1,0 +1,196 @@
+/* fonts (Poppins, Ropa Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    height: 100vh;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.76);
+
+}
+
+/* ========== SIGN-UP section ===========*/
+
+form {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    transition: all 0.3s ease;
+}
+
+form>h1 {
+    color: #FFF;
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+
+input {
+    width: 247px;
+    height: 55px;
+    border-radius: 40px;
+    border: 1px solid #FE4949;
+    padding: 15px 20px;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+}
+
+::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+button {
+    width: 247px;
+    height: 55px;
+    border-radius: 40px;
+    border: none;
+    background-color: #FE4949;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+
+form>span {
+    text-align: center;
+    color: #adabab;
+    font-family: "Ropa Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+form>span>a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #FE4949;
+}
+
+/* -------- end of SIGN-UP section ----------*/
+
+
+/* =============== LOADER =============== */
+
+.loader {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.top-svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.loader_text {
+    color: #FE4949;
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: absolute;
+}
+
+.bottom-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+.loader_ani {
+    margin-top: 8rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite
+}
+
+.loader_ani::before,
+.loader_ani::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite;
+}
+
+.loader_ani::after {
+    transform: rotate3d(90, 90, 0, 180deg);
+    border-color: #FF3D00;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+    }
+
+    75%,
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+    }
+}
+
+/* -------- end of LOADER ----------*/
